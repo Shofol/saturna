@@ -1,24 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+import Navbar from './components/Utilities/Navbar';
+import Home from './pages/home';
+import Footer from './components/Utilities/Footer';
+import TopNav from './components/Utilities/TopNav';
+import NFT from './pages/nft';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <header >
+          <Navbar />
+        </header>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          {/* <Route path="/vote">
+            <Vote />
+          </Route> */}
+          <Route path="/nft/:id">
+            <NFT />
+          </Route>
+        </Switch>
+        <Footer />
+      </Router>
     </div>
   );
 }

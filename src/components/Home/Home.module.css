@@ -1,0 +1,5 @@
+.customSelect {
+  appearance: none;
+  background: center right no-repeat url("../../assets/icons/arrow.svg");
+  background-size: 12px 6px;
+}
