@@ -1,3 +1,4 @@
+import { Suspense, lazy } from 'react';
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -5,10 +6,10 @@ import {
   Route,
 } from "react-router-dom";
 import Navbar from './components/Utilities/Navbar';
-import Home from './pages/home';
 import Footer from './components/Utilities/Footer';
-import TopNav from './components/Utilities/TopNav';
-import NFT from './pages/nft';
+
+const Home = lazy(() => import('./pages/home'));
+const NFT = lazy(() => import('./pages/nft'));
 
 function App() {
   return (
@@ -17,17 +18,19 @@ function App() {
         <header >
           <Navbar />
         </header>
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          {/* <Route path="/vote">
+        <Suspense fallback={<div>Loading...</div>}>
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            {/* <Route path="/vote">
             <Vote />
           </Route> */}
-          <Route path="/nft/:id">
-            <NFT />
-          </Route>
-        </Switch>
+            <Route path="/nft/:id">
+              <NFT />
+            </Route>
+          </Switch>
+        </Suspense>
         <Footer />
       </Router>
     </div>

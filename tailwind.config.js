@@ -11,7 +11,8 @@ module.exports = {
         'br-bold': '#E06AC8',
         'br-dark': '#4B4B4B',
         'br-gray': '#f5f5f5',
-        'br-gray-100': '#F8F7F8'
+        'br-gray-100': '#F8F7F8',
+        'br-gray-200': '#F0EFF0'
       },
       flex: {
         '2': '2 2 0%'
@@ -34,6 +35,9 @@ module.exports = {
       },
       maxWidth: {
         'tiny': '17rem'
+      },
+      maxHeight: {
+        '32': '32rem',
       }
     }
   },
