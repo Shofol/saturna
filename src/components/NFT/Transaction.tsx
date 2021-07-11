@@ -8,7 +8,6 @@ import Checkout from './Checkout';
 import Confirmation from './Confirmation';
 
 const Transaction = () => {
-    let { id }: any = useParams();
 
     const tempData: NFTModel[] = [{
         id: 1,
@@ -35,12 +34,14 @@ const Transaction = () => {
     },
     ];
 
+
+    let { id }: any = useParams();
+
     const bg = useCoverBg('/art.jpg');
 
     const [showCheckoutModal, setShowCheckoutModal] = useState(false);
 
     const [showBidPlacingModal, setShowBidPlacingModal] = useState(false);
-
 
     const [confirmed, setConfirmed] = useState(false);
 

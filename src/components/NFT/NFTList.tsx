@@ -6,9 +6,9 @@ const NFTList = () => {
 
     const history = useHistory();
 
-    const goToNFT = (id: number) => {
-        history.push(`/nft/${id}`);
-    }
+    // const goToNFT = (id: number) => {
+    //     history.push(`/nft/${id}`);
+    // }
 
     const trendingDta: NFTModel[] = [{
         id: 1,
@@ -43,7 +43,7 @@ const NFTList = () => {
                 {
                     trendingDta.map(item => {
                         return <div key={item.id} className="col-span-1 mb-10 lg:mr-12">
-                            <ItemCard nft={item} onClick={() => goToNFT(item.id)} />
+                            <ItemCard nft={item} />
                         </div>
 
                     })

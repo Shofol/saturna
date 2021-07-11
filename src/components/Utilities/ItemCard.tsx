@@ -1,11 +1,18 @@
+import { useHistory } from 'react-router-dom';
 import { NFTModel } from '../../types/types'
 
-const ItemCard = ({ nft, onClick }: ItemCardModel) => {
+const ItemCard = ({ nft }: ItemCardModel) => {
 
     const { name, type, creator, listPrice, timeRemaining, lovedBy, image } = nft;
     let [hour, minute, seconds] = ['', '', '']
     if (timeRemaining) {
         [hour, minute, seconds] = new Date(+timeRemaining * 1000).toISOString().substr(11, 8).toString().split(':');
+    }
+
+    const history = useHistory();
+
+    const onClick = () => {
+        history.push(`/nft/${nft.id}`);
     }
 
     return (
@@ -32,7 +39,6 @@ const ItemCard = ({ nft, onClick }: ItemCardModel) => {
 
 export interface ItemCardModel {
     nft: NFTModel,
-    onClick: Function
 }
 
 export default ItemCard

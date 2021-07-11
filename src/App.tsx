@@ -10,6 +10,8 @@ import Footer from './components/Utilities/Footer';
 
 const Home = lazy(() => import('./pages/home'));
 const NFT = lazy(() => import('./pages/nft'));
+const Profile = lazy(() => import('./pages/profile'));
+
 
 function App() {
   return (
@@ -23,11 +25,11 @@ function App() {
             <Route exact path="/">
               <Home />
             </Route>
-            {/* <Route path="/vote">
-            <Vote />
-          </Route> */}
             <Route path="/nft/:id">
               <NFT />
+            </Route>
+            <Route path="/user/:id">
+              <Profile />
             </Route>
           </Switch>
         </Suspense>
