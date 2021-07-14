@@ -47,6 +47,7 @@ const Search = (props: any) => {
         listPrice: '1.00',
         realPrice: '282.66',
         type: 'normal',
+        userImage: '/art.jpg'
     },
     {
         id: 2,
@@ -58,7 +59,8 @@ const Search = (props: any) => {
         listPrice: '1.00',
         realPrice: '282.66',
         type: 'auction',
-        timeRemaining: '145569'
+        timeRemaining: '145569',
+        userImage: '/art.jpg'
     },
     ]
 

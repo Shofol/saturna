@@ -19,6 +19,7 @@ const Transaction = () => {
         listPrice: '1.00',
         realPrice: '282.66',
         type: 'normal',
+        userImage: '/art.jpg'
     },
     {
         id: 2,
@@ -30,7 +31,8 @@ const Transaction = () => {
         listPrice: '1.00',
         realPrice: '282.66',
         type: 'auction',
-        timeRemaining: '146668'
+        timeRemaining: '146668',
+        userImage: '/art.jpg'
     },
     ];
 

@@ -20,6 +20,8 @@ const NFTList = () => {
         listPrice: '1.00',
         realPrice: '282.66',
         type: 'normal',
+        userImage: '/art.jpg'
+
     },
     {
         id: 2,
@@ -31,7 +33,9 @@ const NFTList = () => {
         listPrice: '1.00',
         realPrice: '282.66',
         type: 'auction',
-        timeRemaining: '16324'
+        timeRemaining: '16324',
+        userImage: '/art.jpg'
+
     },
     ]
 

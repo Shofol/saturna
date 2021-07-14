@@ -9,6 +9,7 @@ export interface NFTModel {
     realPrice: string;
     type: string;
     timeRemaining?: string;
+    userImage: string;
 }
 
 export interface UserModel {

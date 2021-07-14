@@ -20,6 +20,7 @@ const Trending = () => {
         listPrice: '1.00',
         realPrice: '282.66',
         type: 'normal',
+        userImage: '/art.jpg'
     },
     {
         id: 2,
@@ -31,7 +32,8 @@ const Trending = () => {
         listPrice: '1.00',
         realPrice: '282.66',
         type: 'auction',
-        timeRemaining: '16668'
+        timeRemaining: '16668',
+        userImage: '/user.jpg'
     },
     ]
 

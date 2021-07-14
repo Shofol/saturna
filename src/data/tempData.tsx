@@ -21,6 +21,7 @@ export const USER_DATA: UserModel[] = [
             listPrice: '1.00',
             realPrice: '282.66',
             type: 'normal',
+            userImage: '/art.jpg'
         },
         {
             id: 2,
@@ -32,7 +33,8 @@ export const USER_DATA: UserModel[] = [
             listPrice: '1.00',
             realPrice: '282.66',
             type: 'auction',
-            timeRemaining: '146668'
+            timeRemaining: '146668',
+            userImage: '/art.jpg'
         },
         ],
         collection: [{
@@ -45,6 +47,7 @@ export const USER_DATA: UserModel[] = [
             listPrice: '1.00',
             realPrice: '282.66',
             type: 'normal',
+            userImage: '/art.jpg'
         }
         ],
         liked: [{
@@ -57,6 +60,7 @@ export const USER_DATA: UserModel[] = [
             listPrice: '1.00',
             realPrice: '282.66',
             type: 'normal',
+            userImage: '/art.jpg'
         },
         {
             id: 2,
@@ -68,7 +72,8 @@ export const USER_DATA: UserModel[] = [
             listPrice: '1.00',
             realPrice: '282.66',
             type: 'auction',
-            timeRemaining: '146668'
+            timeRemaining: '146668',
+            userImage: '/art.jpg'
         },
         ]
     },
@@ -92,6 +97,7 @@ export const USER_DATA: UserModel[] = [
             listPrice: '1.00',
             realPrice: '282.66',
             type: 'normal',
+            userImage: '/art.jpg'
         }
         ],
         collection: [{
@@ -104,6 +110,7 @@ export const USER_DATA: UserModel[] = [
             listPrice: '1.00',
             realPrice: '282.66',
             type: 'normal',
+            userImage: '/art.jpg'
         },
         {
             id: 2,
@@ -115,7 +122,9 @@ export const USER_DATA: UserModel[] = [
             listPrice: '1.00',
             realPrice: '282.66',
             type: 'auction',
-            timeRemaining: '146668'
+            timeRemaining: '146668',
+            userImage: '/art.jpg'
+
         },
         ],
         liked: [{
@@ -128,6 +137,8 @@ export const USER_DATA: UserModel[] = [
             listPrice: '1.00',
             realPrice: '282.66',
             type: 'normal',
+            userImage: '/art.jpg'
+
         },
 
         ]

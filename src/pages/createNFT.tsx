@@ -17,7 +17,9 @@ const CreateNFT = () => {
         listPrice: '0.00',
         realPrice: '0.00',
         type: '',
-        timeRemaining: ''
+        timeRemaining: '',
+        userImage: '/art.jpg'
+
     }
 
     const [nftData, setNftData] = useState<NFTModel>(tempNFT)

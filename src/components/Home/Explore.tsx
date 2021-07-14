@@ -21,6 +21,7 @@ const Explore = () => {
         listPrice: '1.00',
         realPrice: '282.66',
         type: 'normal',
+        userImage: '/user.jpg'
     },
     {
         id: 2,
@@ -32,7 +33,9 @@ const Explore = () => {
         listPrice: '1.00',
         realPrice: '282.66',
         type: 'auction',
-        timeRemaining: '145569'
+        timeRemaining: '145569',
+        userImage: '/art.jpg'
+
     },
     ]
 
