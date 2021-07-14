@@ -1,6 +1,9 @@
-const Connect = () => {
+const Connect = ({ onCancel }: any) => {
     return (
-        <div className="mx-4 p-10 rounded-2xl bg-white shadow-btnShadow max-w-lg">
+        <div className="mx-4 p-10 rounded-2xl bg-white shadow-btnShadow max-w-lg relative">
+            <button onClick={() => onCancel()} className="absolute top-5 right-5">
+                <img src="/close.svg" alt="close" width="24px" height="24px" />
+            </button>
             <h1 className="font-bold text-2xl">Connect your wallet</h1>
             <h2 className="font-medium text-lg mt-3">Connect with one of our available wallet providers below.</h2>
 

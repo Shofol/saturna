@@ -50,18 +50,18 @@ const Navbar = () => {
                             <Link to="/" className="mx-4 hover:text-br-primary">Explore</Link>
                             <Link to="/artists" className="mx-4 hover:text-br-primary">Artists</Link>
                         </div>
-                        <button onClick={() => { setShowMobileNavbar(false); setShowConnectOptions(true) }} className="bg-br-primary lg:hidden order-3 mt-auto w-full font-bold py-3 rounded-3xl">Connect wallet</button>
+                        <button onClick={() => { setShowMobileNavbar(false); setShowConnectOptions(true); }} className="bg-br-primary lg:hidden order-3 mt-auto w-full font-bold py-3 rounded-3xl">Connect wallet</button>
                     </div>
 
                     <Link to="/create" className="bg-br-primary font-bold py-2 rounded-3xl px-4 relative z-10 mr-4">Create</Link>
-                    <button className="bg-br-primary font-bold py-2 rounded-3xl px-4 relative z-10">Connect</button>
+                    <button onClick={() => { setShowConnectOptions(true) }} className="bg-br-primary font-bold py-2 rounded-3xl px-4 relative z-10">Connect</button>
 
                     <button onClick={() => { setShowMobileNavbar(!showMobileNavbar) }} className="lg:hidden relative  flex items-center border rounded-full ml-4 p-1.5 border-gray-300">
                         <img src={showMobileNavbar ? "/close.svg" : "/hamburger.svg"} alt="menu button" width="24px" height="24px" />
                     </button>
                 </div>
                 {showConnectOptions && <Backdrop>
-                    <Connect />
+                    <Connect onCancel={() => { setShowConnectOptions(false); }} />
                 </Backdrop>}
             </nav >
         </>

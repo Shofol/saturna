@@ -127,7 +127,7 @@ const Profile = () => {
                 </div>
             </div>
             {showProfileEditForm && <Backdrop>
-                <ProfileEdit user={user} />
+                <ProfileEdit onCancel={() => setShowProfileEditForm(false)} user={user} />
             </Backdrop>}
         </div>
     )

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { UserModel } from '../../types/types';
 import FileUploader from '../Utilities/FileUploader';
 
-const ProfileEdit = ({ user }: ProfilePropsModel) => {
+const ProfileEdit = ({ user, onCancel }: ProfilePropsModel) => {
 
     const [image, setImage] = useState<any>(user.image ? user.image : null);
 
@@ -15,7 +15,10 @@ const ProfileEdit = ({ user }: ProfilePropsModel) => {
     }
 
     return (
-        <div className="p-12 bg-white rounded-3xl flex flex-col items-start w-full mx-4 lg:mx-0 max-w-lg max-h-90vh overflow-y-auto">
+        <div className="relative p-12 bg-white rounded-3xl flex flex-col items-start w-full mx-4 lg:mx-0 max-w-lg max-h-90vh overflow-y-auto">
+            <button onClick={() => onCancel()} className="absolute top-5 right-5">
+                <img src="/close.svg" alt="close" width="24px" height="24px" />
+            </button>
             <h1 className="text-3xl font-bold">Edit Profile</h1>
             <form className="mt-8 flex flex-col w-full">
                 <label htmlFor="imageUpload" className="text-left font-bold">Profile Picture</label>
@@ -59,6 +62,7 @@ const ProfileEdit = ({ user }: ProfilePropsModel) => {
 
 interface ProfilePropsModel {
     user: UserModel;
+    onCancel: Function;
 }
 
 export default ProfileEdit
