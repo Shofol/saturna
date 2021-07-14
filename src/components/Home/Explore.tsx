@@ -1,11 +1,11 @@
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 import { NFTModel } from '../../types/types';
 import ItemCard from '../Utilities/ItemCard';
 import styles from './Home.module.css';
 
 const Explore = () => {
 
-    const history = useHistory();
+    // const history = useHistory();
 
     // const goToNFT = (id: number) => {
     //     history.push(`/nft/${id}`);

@@ -142,7 +142,7 @@ const Transaction = () => {
             </Backdrop>}
 
             {confirmed && <Backdrop>
-                <Confirmation onCancel={() => setConfirmed(false)} isAuction={isAuction} name={nft.name} />
+                <Confirmation onCancel={() => setConfirmed(false)} isAuction={isAuction} name={nft.name} image={nft.image} text={'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra netus viverra nisl convallis bibendum posuere amet pharetra.'} />
             </Backdrop>}
         </div>
     )

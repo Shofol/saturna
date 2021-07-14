@@ -8,9 +8,13 @@ import {
 import Navbar from './components/Utilities/Navbar';
 import Footer from './components/Utilities/Footer';
 
+
 const Home = lazy(() => import('./pages/home'));
 const NFT = lazy(() => import('./pages/nft'));
 const Profile = lazy(() => import('./pages/profile'));
+const CreateNFT = lazy(() => import('./pages/createNFT'));
+const Artists = lazy(() => import('./pages/artists'));
+const Search = lazy(() => import('./pages/search'));
 
 
 function App() {
@@ -30,6 +34,15 @@ function App() {
             </Route>
             <Route path="/user/:id">
               <Profile />
+            </Route>
+            <Route path="/create">
+              <CreateNFT />
+            </Route>
+            <Route path="/artists">
+              <Artists />
+            </Route>
+            <Route path="/search">
+              <Search />
             </Route>
           </Switch>
         </Suspense>

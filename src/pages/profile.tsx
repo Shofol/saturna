@@ -1,5 +1,7 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import ProfileEdit from '../components/Profile/ProfileEdit';
+import Backdrop from '../components/Utilities/Backdrop';
 import ItemCard from '../components/Utilities/ItemCard';
 import { USER_DATA } from '../data/tempData';
 import { useCoverBg } from '../hooks/useCoverBg';
@@ -14,6 +16,18 @@ const Profile = () => {
     const bg = useCoverBg(user.image);
 
     const [active, setActive] = useState('created');
+
+    const [ownProfile, setownProfile] = useState(false);
+
+    const [showProfileEditForm, setShowProfileEditForm] = useState(false);
+
+    const userProfileId = 2;
+
+    useEffect(() => {
+        if (userProfileId === user.id) {
+            setownProfile(true);
+        }
+    }, [userProfileId, user]);
 
     return (
         <div >
@@ -41,15 +55,24 @@ const Profile = () => {
                     </div>
                 </div>
                 <div className="flex mt-5">
-                    <button className="border border-gray-200 px-8 py-2 rounded-3xl font-bold mr-4">Follow</button>
-                    <button className="border border-gray-200 px-8 py-2 rounded-3xl font-bold">Share</button>
+                    {!ownProfile && <>
+                        <button className="border border-gray-200 px-8 py-2 rounded-3xl font-bold mr-4">Follow</button>
+                        <button className="border border-gray-200 px-8 py-2 rounded-3xl font-bold">Share</button>
+                    </>}
+                    {ownProfile && <>
+                        <button onClick={() => setShowProfileEditForm(true)} className="border border-gray-200 px-8 py-2 rounded-3xl font-bold mr-4">Edit profile</button>
+                    </>}
                 </div>
             </div>
-            <div className="mt-16 lg:mx-56">
+            <div className="mt-16 lg:mx-56 px-4 lg:px-0">
                 <div className="flex justify-start space-x-8 ">
                     <button onClick={() => setActive('created')} className={"text-gray-500 hover:text-gray-800 font-bold " + (active === 'created' ? 'text-gray-800' : '')}>Created</button>
                     <button onClick={() => setActive('collection')} className={"text-gray-500 hover:text-gray-800 font-bold " + (active === 'collection' ? 'text-gray-800' : '')}>Collection</button>
                     <button onClick={() => setActive('liked')} className={"text-gray-500 hover:text-gray-800 font-bold " + (active === 'liked' ? 'text-gray-800' : '')}>Liked</button>
+                    {
+                        ownProfile &&
+                        <button onClick={() => setActive('currentBids')} className={"text-gray-500 hover:text-gray-800 font-bold " + (active === 'currentBids' ? 'text-gray-800' : '')}>Current Bids</button>
+                    }
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 3xl:grid-cols-4 mt-8">
                     {active === 'created' &&
@@ -87,8 +110,25 @@ const Profile = () => {
                                 })}
                         </>
                     }
+
+
+                    {active === 'currentBids' &&
+                        user.currentBids &&
+                        <>
+                            {
+                                user.currentBids.map(item => {
+                                    return <div key={item.id} className="col-span-1 mb-10 lg:mr-12">
+                                        <ItemCard nft={item} />
+                                    </div>
+
+                                })}
+                        </>
+                    }
                 </div>
             </div>
+            {showProfileEditForm && <Backdrop>
+                <ProfileEdit user={user} />
+            </Backdrop>}
         </div>
     )
 }

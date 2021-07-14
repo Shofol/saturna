@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import Connect from '../NFT/Connect';
 import Backdrop from './Backdrop';
 import TopNav from './TopNav';
@@ -9,6 +9,12 @@ const Navbar = () => {
     const [showMobileNavbar, setShowMobileNavbar] = useState(false);
 
     const [showConnectOptions, setShowConnectOptions] = useState(false);
+
+    const history = useHistory();
+
+    const handleSearch = (value: string) => {
+        history.push('/search', { query: value })
+    }
 
     return (
         <>
@@ -22,15 +28,16 @@ const Navbar = () => {
                         (showMobileNavbar ? 'flex' : 'hidden lg:flex')}>
                         <div className="bg-br-gray flex items-center lg:flex-1 lg:mx-36 rounded-3xl px-4 py-2 order-1 lg:order-2">
                             <img src="/search.svg" alt="search icon" width="17px" height="17px" />
-                            <input type="text" placeholder="Search all NFT's" className="bg-br-gray ml-2 w-full rounded-xl px-2" />
+                            <input onChange={(e) => { handleSearch(e.target.value) }} type="text" placeholder="Search all NFT's" className="bg-br-gray ml-2 w-full rounded-xl px-2" />
                         </div>
                         <div className="flex justify-center text-2xl lg:text-base order-2 lg:order-1 mt-12 lg:mt-0 bg-w">
-                            <a href="#/explore" className="mx-4 hover:text-br-primary">Explore</a>
-                            <a href="#/artists" className="mx-4 hover:text-br-primary">Artists</a>
+                            <Link to="/" className="mx-4 hover:text-br-primary">Explore</Link>
+                            <Link to="/artists" className="mx-4 hover:text-br-primary">Artists</Link>
                         </div>
                         <button onClick={() => { setShowMobileNavbar(false); setShowConnectOptions(true) }} className="bg-br-primary lg:hidden order-3 mt-auto w-full font-bold py-3 rounded-3xl">Connect wallet</button>
                     </div>
 
+                    <Link to="/create" className="bg-br-primary font-bold py-2 rounded-3xl px-4 relative z-10 mr-4">Create</Link>
                     <button className="bg-br-primary font-bold py-2 rounded-3xl px-4 relative z-10">Connect</button>
 
                     <button onClick={() => { setShowMobileNavbar(!showMobileNavbar) }} className="lg:hidden relative  flex items-center border rounded-full ml-4 p-1.5 border-gray-300">

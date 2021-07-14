@@ -12,7 +12,8 @@ module.exports = {
         'br-dark': '#4B4B4B',
         'br-gray': '#f5f5f5',
         'br-gray-100': '#F8F7F8',
-        'br-gray-200': '#F0EFF0'
+        'br-gray-200': '#F0EFF0',
+        'br-dark-blue': '#3A395E'
       },
       flex: {
         '2': '2 2 0%'
@@ -28,7 +29,7 @@ module.exports = {
         navInner: 'inset 0px 0px 6px #AE3AF5, 0px 0px 6px #AE3AF5;',
         btnShadow: '0px 30px 60px rgba(195, 192, 195, 0.1)',
         nftShadow: '0px 15px 40px rgba(0, 0, 0, 0.05)',
-        nftTxnShadow: '0px 30px 60px rgba(195, 192, 195, 0.2);'
+        nftTxnShadow: '0px 30px 60px rgba(195, 192, 195, 0.2);',
       },
       fontFamily: {
         'botrio': ['Botrio', 'sans-serif']
@@ -38,6 +39,10 @@ module.exports = {
       },
       maxHeight: {
         '32': '32rem',
+        '90vh': '90vh'
+      },
+      spacing: {
+        '88': '22rem'
       }
     }
   },

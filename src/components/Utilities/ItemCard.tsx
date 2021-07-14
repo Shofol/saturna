@@ -16,12 +16,12 @@ const ItemCard = ({ nft }: ItemCardModel) => {
     }
 
     return (
-        <div onClick={() => { onClick() }} className="rounded-3xl bg-white shadow-nftShadow md:max-w-xs cursor-pointer hover:opacity-80">
-            <div className="rounded-3xl h-72 " style={{ background: `center / cover no-repeat url('/user.jpg')` }}></div>
+        <div onClick={() => { onClick() }} className="rounded-3xl bg-white shadow-nftShadow md:max-w-xs cursor-pointer hover:opacity-80 w-full">
+            <div className="rounded-3xl h-72 " style={{ background: `center / cover no-repeat url('${image}')` }}></div>
             <div className="mt-4 px-5">
                 <h3 className="text-left text-lg font-bold">{name}</h3>
                 <div className="flex items-center py-3">
-                    <div className="w-6 h-6 rounded-full mr-2" style={{ background: `center / cover no-repeat url('${image}')` }}></div>
+                    <div className="w-6 h-6 rounded-full mr-2" style={{ background: `center / cover no-repeat url('/user.jpg')` }}></div>
                     <p className="text-gray-500">@{creator}</p>
                 </div>
             </div>
