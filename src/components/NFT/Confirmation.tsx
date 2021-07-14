@@ -12,7 +12,7 @@ const Confirmation = ({ isAuction = true, name, onCancel, image, text, isLive = 
             </button>
 
             <div className="w-48 h-48 rounded-2xl mt-4" style={bgImage}></div>
-            <h1 className="font-bold text-2xl mt-10">{isLive ? 'Your NFT is now live!' : isAuction ? 'Your bid went through!' : `${name} is yours!}`}</h1>
+            <h1 className="font-bold text-2xl mt-10">{isLive ? 'Your NFT is now live!' : isAuction ? 'Your bid went through!' : `${name} is yours!`}</h1>
             <p className="mt-4">{text}</p>
             {!isAuction && !isLive && <button className="bg-br-gray-200 px-6 py-3 font-bold rounded-3xl mt-8">Download assets</button>}
             {isLive && <button className="bg-br-primary px-6 py-3 font-bold rounded-3xl mt-8 flex items-center">

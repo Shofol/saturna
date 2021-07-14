@@ -37,6 +37,17 @@ export interface ArtistModel {
     image: string
 }
 
+export interface HistoryModel {
+    id: number,
+    creator: string,
+    date: string,
+    time: string,
+    listPrice: string,
+    realPrice: string
+    type: string,
+    userImage: string
+}
+
 export interface Art {
     id: number,
     image: string

@@ -42,7 +42,7 @@ const NFTList = () => {
 
     return (
         <div className="px-4 lg:px-0 lg:mx-56 mt-28 mb-20">
-            <h2 className="text-2xl font-bold text-left">You might also like</h2>
+            <h2 className="text-2xl font-bold text-left">You may also like</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 3xl:grid-cols-4 mt-12">
                 {
                     trendingDta.map(item => {

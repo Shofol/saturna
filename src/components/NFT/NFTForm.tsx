@@ -108,7 +108,7 @@ const NFTForm = ({ onSubmit }: NFTFormPropsModel) => {
                         <span className="font-bold ml-2">edition(s)</span>
                     </div>
                 </div>
-                <div className="z-30 fixed px-4 lg:px-0 lg:p-0 bg-white bottom-0 left-0 right-0 lg:relative">
+                <div className="z-30 lg:z-0 fixed px-4 lg:px-0 lg:p-0 bg-white bottom-0 left-0 right-0 lg:relative">
                     <button type="button" onClick={() => onSubmit(formValue)} className="border bg-br-primary px-5 py-3 rounded-3xl font-bold my-6 lg:my-8 w-full">Create</button>
                 </div>
             </form>
