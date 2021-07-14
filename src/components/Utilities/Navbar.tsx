@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom'
+import { useEffect, useState } from 'react';
+import { Link, useHistory, useLocation } from 'react-router-dom'
 import Connect from '../NFT/Connect';
 import Backdrop from './Backdrop';
 import TopNav from './TopNav';
@@ -16,6 +16,22 @@ const Navbar = () => {
         history.push('/search', { query: value })
     }
 
+    const [query, setQuery] = useState('');
+
+    const location = useLocation();
+
+    useEffect(() => {
+        if (location.pathname !== '/search') {
+            setQuery('');
+        }
+    }, [location]);
+
+
+    useEffect(() => {
+        handleSearch(query);
+    }, [query])
+
+
     return (
         <>
             {!showMobileNavbar && <TopNav />}
@@ -28,7 +44,7 @@ const Navbar = () => {
                         (showMobileNavbar ? 'flex' : 'hidden lg:flex')}>
                         <div className="bg-br-gray flex items-center lg:flex-1 lg:mx-36 rounded-3xl px-4 py-2 order-1 lg:order-2">
                             <img src="/search.svg" alt="search icon" width="17px" height="17px" />
-                            <input onChange={(e) => { handleSearch(e.target.value) }} type="text" placeholder="Search all NFT's" className="bg-br-gray ml-2 w-full rounded-xl px-2" />
+                            <input onChange={(e) => { setQuery(e.target.value) }} value={query} type="text" placeholder="Search all NFT's" className="bg-br-gray ml-2 w-full rounded-xl px-2" />
                         </div>
                         <div className="flex justify-center text-2xl lg:text-base order-2 lg:order-1 mt-12 lg:mt-0 bg-w">
                             <Link to="/" className="mx-4 hover:text-br-primary">Explore</Link>

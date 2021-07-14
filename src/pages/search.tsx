@@ -74,23 +74,25 @@ const Search = (props: any) => {
 
 
     useEffect(() => {
-        if (active === 'collectibles') {
-            if (location.state.query === '') {
-                setFilterdNFTData(nftData);
-            } else {
-                const filterdData = nftData.filter(nft => nft.name.toLowerCase().includes(location.state.query));
-                setFilterdNFTData(filterdData);
+        if (location.pathname === '/search') {
+            if (active === 'collectibles') {
+                if (location.state.query === '') {
+                    setFilterdNFTData(nftData);
+                } else {
+                    const filterdData = nftData.filter(nft => nft.name.toLowerCase().includes(location.state.query));
+                    setFilterdNFTData(filterdData);
+                }
+            }
+            if (active === 'users') {
+                if (location.state.query === '') {
+                    setFilterdUserata(userData);
+                } else {
+                    const filterdData = userData.filter(user => user.fullName.toLowerCase().includes(location.state.query));
+                    setFilterdUserata(filterdData);
+                }
             }
         }
-        if (active === 'users') {
-            if (location.state.query === '') {
-                setFilterdUserata(userData);
-            } else {
-                const filterdData = userData.filter(user => user.fullName.toLowerCase().includes(location.state.query));
-                setFilterdUserata(filterdData);
-            }
-        }
-    }, [location.state.query, active, nftData, userData]);
+    }, [location, active, nftData, userData]);
 
 
 
