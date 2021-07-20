@@ -38,7 +38,7 @@ const NFTForm = ({ onSubmit }: NFTFormPropsModel) => {
 
 
     return (
-        <div className="text-br-dark-blue">
+        <div className="text-br-dark-blue mb-32">
             <form className="mt-8 flex flex-col w-full" onSubmit={(e) => { console.log(e) }}>
                 <label htmlFor="imageUpload" className="text-left font-bold">Upload file <span className="text-br-primary">*</span></label>
                 <div className="p-10 border-dashed border-2  rounded-3xl border-light-blue-500 mt-2 relative">
@@ -82,17 +82,17 @@ const NFTForm = ({ onSubmit }: NFTFormPropsModel) => {
                     <div className="col-span-1">
                         <div className=" flex flex-col mr-2">
                             <label htmlFor="fixedPrice" className="text-left font-bold">Fixed price <span className="text-br-primary">*</span> </label>
-                            <div className="flex items-center bg-br-gray rounded-3xl mt-2 py-3 pr-2">
-                                <span className="px-4 flex items-center font-bold">{formValue.paidIn.toUpperCase()}</span>
-                                <input onBlur={(e) => { handleChange('fixedPrice', e.target.value) }} max="20" className="bg-br-gray rounded-3xl " type="text" id="fixedPrice" name="fixedPrice" defaultValue={formValue.fixedPrice} />
+                            <div className="flex items-center bg-br-gray rounded-3xl mt-2 relative">
+                                <span className="absolute left-3 flex items-center font-bold">{formValue.paidIn.toUpperCase()}</span>
+                                <input onBlur={(e) => { handleChange('fixedPrice', e.target.value) }} max="20" className="pl-20 py-2.5 bg-br-gray rounded-3xl " type="text" id="fixedPrice" name="fixedPrice" defaultValue={formValue.fixedPrice} />
                             </div>
                         </div>
                     </div>
                     <div className="col-span-1">
                         <div className="flex flex-col items-start">
                             <span className="text-left font-bold">Paid in</span>
-                            <div className="bg-br-gray px-4 py-3 mt-2 rounded-3xl w-full">
-                                <select onChange={(e) => { handleChange('paidIn', e.target.value) }} className={"pr-6 w-full customSelect"}>
+                            <div className="bg-br-gray  mt-2 rounded-3xl w-full">
+                                <select onChange={(e) => { handleChange('paidIn', e.target.value) }} className={"px-4 py-3 pr-6 w-full customSelect rounded-3xl"}>
                                     <option value="bnb">BNB</option>
                                     <option value="bitcoin">BITCOIN</option>
                                 </select>
@@ -103,9 +103,9 @@ const NFTForm = ({ onSubmit }: NFTFormPropsModel) => {
 
                 <div className="flex-1 flex flex-col mt-8">
                     <label htmlFor="noOfEditions" className="text-left font-bold">Number of editions <span className="text-br-primary">*</span> </label>
-                    <div className="bg-br-gray rounded-3xl py-3 px-4 mt-2 flex justify-between">
-                        <input onBlur={(e) => { handleChange('noOfEdition', e.target.value) }} max="20" className="bg-br-gray rounded-3xl flex-1 px-2" type="text" id="noOfEditions" name="noOfEditions" defaultValue={formValue.noOfEditions} />
-                        <span className="font-bold ml-2">edition(s)</span>
+                    <div className="bg-br-gray rounded-3xl mt-2 flex justify-between items-center relative">
+                        <input onBlur={(e) => { handleChange('noOfEdition', e.target.value) }} max="20" className="py-3 bg-br-gray rounded-3xl flex-1 px-4" type="text" id="noOfEditions" name="noOfEditions" defaultValue={formValue.noOfEditions} />
+                        <span className="font-bold right-5 absolute">edition(s)</span>
                     </div>
                 </div>
                 <div className="z-30 lg:z-0 fixed px-4 lg:px-0 lg:p-0 bg-white bottom-0 left-0 right-0 lg:relative">

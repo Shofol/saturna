@@ -101,7 +101,7 @@ const Search = (props: any) => {
         <div className="px-4 mt-20 lg:px-0 lg:mx-56">
             <h2 className="text-2xl font-bold text-left text-gray-300">Search results for <span className="text-black">{location?.state?.query}</span> </h2>
 
-            <div className="flex justify-between mt-20">
+            <div className="flex items-center  justify-between mt-20">
                 <div className="flex justify-start space-x-8 ">
                     <button onClick={() => setActive('collectibles')} className={"text-gray-500 hover:text-gray-800 font-bold " +
                         (active === 'collectibles' ? 'text-gray-800' : '')}>Collectibles </button>
@@ -112,9 +112,9 @@ const Search = (props: any) => {
 
                 </div>
                 <div className="flex items-center">
-                    <span className="mr-4">Sort by</span>
-                    <div className="bg-br-gray px-4 rounded-2xl">
-                        <select className="pr-6 py-2 customSelect">
+                    <p className="mr-4 w-20">Sort by</p>
+                    <div className="bg-br-gray mt-2 rounded-3xl w-full">
+                        <select className={"px-4 py-3 pr-6 w-full customSelect rounded-3xl"}>
                             <option value="0">Newest First</option>
                             <option value="0">Oldest First</option>
                             <option value="0">Follower Count</option>
@@ -138,10 +138,10 @@ const Search = (props: any) => {
                 }
             </div>}
 
-            {active === 'collectibles' && <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 3xl:grid-cols-4 mt-12">
+            {active === 'collectibles' && <div className="mt-12 flex flex-wrap justify-center lg:justify-start" >
                 {
                     filterdNFTData.map(item => {
-                        return <div key={item.id} className="col-span-1 mb-10 lg:mr-12">
+                        return <div key={item.id} className="lg:mr-8 2xl:mr-12 mb-10">
                             <ItemCard nft={item} />
                         </div>
 

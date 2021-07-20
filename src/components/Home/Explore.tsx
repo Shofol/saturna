@@ -36,27 +36,29 @@ const Explore = () => {
         timeRemaining: '145569',
         userImage: '/art.jpg'
 
-    },
+    }
     ]
 
     return (
         <div className="px-4 mt-32 lg:px-0">
-            <div className="flex justify-between">
+            <div className="flex items-center justify-between">
                 <h2 className="text-2xl font-bold text-left">Explore all</h2>
                 <div className="flex items-center">
-                    <span className="mr-4">Sort by</span>
-                    <div className="bg-br-gray px-4 rounded-2xl">
-                        <select className={"pr-6 py-2 " + (styles.customSelect)}>
+                    <p className="mr-4 w-20">Sort by</p>
+                    <div className="bg-br-gray mt-2 rounded-3xl w-full">
+                        <select className={"px-4 py-3 pr-6 w-full customSelect rounded-3xl"}>
                             <option value="0">Newest First</option>
-                            <option value="0">Popular</option>
+                            <option value="0">Oldest First</option>
+                            <option value="0">Follower Count</option>
+
                         </select>
                     </div>
                 </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 3xl:grid-cols-4 mt-12">
+            <div className="mt-12 flex flex-wrap justify-center lg:justify-start" >
                 {
                     allDta.map(item => {
-                        return <div key={item.id} className="col-span-1 mb-10 lg:mr-12">
+                        return <div key={item.id} className="lg:mr-8 2xl:mr-12 mb-10">
                             <ItemCard nft={item} />
                         </div>
 

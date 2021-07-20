@@ -28,7 +28,9 @@ const Navbar = () => {
 
 
     useEffect(() => {
-        handleSearch(query);
+        if (location.pathname === '/search' || (location.pathname !== '/search' && query !== '')) {
+            handleSearch(query);
+        }
     }, [query])
 
 
@@ -42,13 +44,15 @@ const Navbar = () => {
                 <div className="flex items-center lg:flex-1 lg:justify-between">
                     <div className={"flex-col lg:flex-row font-bold lg:flex-1 lg:items-center absolute lg:relative inset-0 pt-24 lg:pt-0 px-10 h-screen lg:h-auto pb-10 lg:pb-0 bg-white " +
                         (showMobileNavbar ? 'flex' : 'hidden lg:flex')}>
-                        <div className="bg-br-gray flex items-center lg:flex-1 lg:mx-36 rounded-3xl px-4 py-2 order-1 lg:order-2">
-                            <img src="/search.svg" alt="search icon" width="17px" height="17px" />
-                            <input onChange={(e) => { setQuery(e.target.value) }} value={query} type="text" placeholder="Search all NFT's" className="bg-br-gray ml-2 w-full rounded-xl px-2" />
+                        <div className="bg-br-gray flex items-center lg:flex-1 lg:mx-36 order-1 lg:order-2 relative rounded-3xl">
+                            <input onChange={(e) => { setQuery(e.target.value) }} value={query} type="text"
+                                placeholder="Search all NFT's" className="bg-br-gray pl-10 w-full rounded-3xl py-2 outline-none focus:ring-.5 ring-black" />
+                            <img className="absolute left-3" src="/search.svg" alt="search icon" width="17px" height="17px" />
+
                         </div>
                         <div className="flex justify-center text-2xl lg:text-base order-2 lg:order-1 mt-12 lg:mt-0 bg-w">
-                            <Link to="/" className="mx-4 hover:text-br-primary">Explore</Link>
-                            <Link to="/artists" className="mx-4 hover:text-br-primary">Artists</Link>
+                            <Link to="/" onClick={() => { setShowMobileNavbar(false) }} className="mx-4 hover:text-br-primary">Explore</Link>
+                            <Link to="/artists" onClick={() => { setShowMobileNavbar(false) }} className="mx-4 hover:text-br-primary">Artists</Link>
                         </div>
                         <button onClick={() => { setShowMobileNavbar(false); setShowConnectOptions(true); }} className="bg-br-primary lg:hidden order-3 mt-auto w-full font-bold py-3 rounded-3xl">Connect wallet</button>
                     </div>

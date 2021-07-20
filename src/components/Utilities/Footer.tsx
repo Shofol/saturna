@@ -1,6 +1,6 @@
 const Footer = () => {
     return (
-        <div className="bg-br-gray-100 py-10 px-10 flex flex-col lg:flex-row text-gray-500">
+        <footer className="bg-br-gray-100 py-10 px-10 flex flex-col lg:flex-row text-gray-500 mt-auto justify-end">
             <div className="flex items-start lg:items-center lg:flex-1">
                 <img width="44px" height="38px" src="/grayLogo.png" alt="saturna logo" />
                 <div className="flex-1 flex flex-col lg:flex-row lg:justify-between mx-8">
@@ -16,7 +16,7 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </footer>
     )
 }
 

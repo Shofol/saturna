@@ -44,7 +44,9 @@ const CreateNFT = () => {
 
 
     return (
-        <div className=" mx-4 lg:mx-80 xl:mx-80 2xl:mx-96 mt-20">
+
+        // lg:mx-80 xl:mx-80 2xl:mx-96
+        <div className=" mx-4 lg:mx-auto lg:max-w-3xl 2xl:max-w-4xl mt-20">
             <div className="flex items-center justify-between">
                 <h1 className="text-2xl lg:text-4xl font-bold">Create a collectible</h1>
                 <button className="border border-gray-200 px-5 py-3 rounded-3xl font-bold" onClick={() => setShowImportModal(true)}>Import NFT</button>

@@ -11,7 +11,13 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+html,
+body,
+#root,
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   margin: 0;
   font-family: Avenir, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
     "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
@@ -19,13 +25,23 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-input {
+input,
+textarea,
+select {
   min-width: 0 !important;
+  border: 2px solid transparent !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none !important;
+  border: 2px solid black !important;
 }
 
 .customSelect {
   appearance: none;
-  background: center right no-repeat url("./assets/icons/arrow.svg");
+  background: 90% center no-repeat url("./assets/icons/arrow.svg");
   background-size: 12px 6px;
 }
 

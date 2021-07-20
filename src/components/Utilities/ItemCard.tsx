@@ -20,7 +20,7 @@ const ItemCard = ({ nft }: ItemCardModel) => {
     const coverBg = useCoverBg(image);
 
     return (
-        <div onClick={() => { onClick() }} className="rounded-3xl bg-white shadow-nftShadow md:max-w-xs cursor-pointer hover:opacity-80 w-full">
+        <div onClick={() => { onClick() }} style={{ minWidth: '292px' }} className="rounded-3xl bg-white shadow-nftShadow md:max-w-xs cursor-pointer hover:opacity-80 w-full">
             <div className="rounded-3xl h-72 " style={coverBg}></div>
             <div className="mt-4 px-5">
                 <h3 className="text-left text-lg font-bold">{name}</h3>
